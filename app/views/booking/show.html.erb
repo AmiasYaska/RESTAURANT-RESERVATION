@@ -1,1 +1,8 @@
-<p>Choose Hotel Location</p>
+<h1 class="text-4xl ">Choose Hotel Location</h1>
+
+<div class="grid md:grid-cols-4 gap-4 px-8 mt-8">
+    <% @locations.each do |location|%>
+        <%= render 'location', location: location %>
+    <% end %>
+    
+</div>
