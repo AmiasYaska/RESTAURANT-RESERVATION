@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :locations
   devise_for :owners
   devise_for :customers
+
+  resource :booking, only: [ :show], controller: :booking
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -10,6 +12,10 @@ Rails.application.routes.draw do
 
   authenticated :owner do
     root to: "locations#index", as: :authenticated_owner_root
+  end
+
+  authenticated :customer do
+    root to: "booking#show", as: :authenticated_customer_root
   end
 
   # Defines the root path route ("/")
