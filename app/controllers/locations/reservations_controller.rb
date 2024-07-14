@@ -1,9 +1,9 @@
-module Location
+module Locations
     class ReservationsController < ApplicationController
         before_action :set_location
 
         def new
-            @location = @Locations.new
+            @reservation = @location.reservations.new
         end
 
         def create
@@ -11,7 +11,7 @@ module Location
 
         private
         def set_location
-            location = Location.find(params[:location_id])
+            @location = Location.find(params[:location_id])
         end
     end
 end
