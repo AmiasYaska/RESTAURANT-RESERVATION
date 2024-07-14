@@ -10,6 +10,15 @@
     <p class="text-lg">
         <%= location.table_limit%>
     </p>
+
+    <p class="text-lg">
+        Opens at <%= location.opening_time.strftime("%H:%M") %>
+    </p>
+
+    <p class="text-lg">
+        Closes at <%= location.closing_time.strftime("%H:%M") %>
+    </p>
+
     <div class="mt-4">
         <%= link_to 'Book Reservation', "#", class:"p-2 rounded-md bg-blue-400 text-blue-50" %>
     </div>
