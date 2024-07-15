@@ -10,6 +10,14 @@ module Locations
             @reservation = @location.reservations.new(reservation_date: params[:reservation_date])
 
             if @location.within_operating_hours(@reservation.reservation_date)
+                before_date = @reservation.reservation_date - 15.minutes
+                after_date = @reservation.reservation_date + 15.minutes
+                if @location.reservations.where(reservation_date: before_date .. after_date).count >= @location.table_limit
+                    redirect_to new_location_reservation_path(@location), alert: "Fully booked. Select another date"
+                else
+                    @reservation.save
+                    redirect_to booking_path, notice: "You have successfully booked the restaurant"
+                end
 
             else
 
