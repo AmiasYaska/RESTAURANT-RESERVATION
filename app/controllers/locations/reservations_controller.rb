@@ -9,12 +9,11 @@ module Locations
         def create
             @reservation = @location.reservations.new(reservation_date: params[:reservation_date])
 
-            if @location.operating_hours(@reservation.reservation_date)
-                puts "Outside of hours"
+            if @location.within_operating_hours(@reservation.reservation_date)
 
             else
 
-                render :new, alert: "The time you chose is outside the operating hours"
+                redirect_to new_location_reservation_path(@location), alert: "The time you chose is outside the operating hours"
             end
 
         end
