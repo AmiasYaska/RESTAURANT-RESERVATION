@@ -1,6 +1,9 @@
-<h1 class="text-5xl pt-20">Active Reservations</h1>
+<div class="pt-8">
+    <h1 class="text-3xl p-4 ">Your Active Reservations</h1>
 
-<% @reservations.each do |reservation|%>
-    <%= render 'reservation', reservation: reservation %>
-
-<% end %>
+    <div class="grid gap-2">
+        <% @reservations.each do |reservation|%>
+            <%= render 'reservation', reservation: reservation %>
+        <% end %>
+    </div>
+</div>
