@@ -5,10 +5,11 @@
     <% end %>
 
     <%= render @location %>
-
-    <% @location.reservations.each do |reservation|%>
-      <%= render 'reservation', reservation: reservation %>
-    <% end %>
+    <div class="flex flex-col gap-2">
+      <% @location.reservations.each do |reservation|%>
+        <%= render 'reservation', reservation: reservation %>
+      <% end %>
+    </div>
   
 
     <%= link_to "Edit this location", edit_location_path(@location), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
