@@ -1,0 +1,6 @@
+<h1>Active Reservations</h1>
+
+<% @reservations.each do |reservation|%>
+    <%= render 'reservation', reservation: reservation %>
+
+<% end %>
