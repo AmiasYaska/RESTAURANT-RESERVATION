@@ -4,6 +4,7 @@
     <%= form_with url: location_reservations_path(@location) do |form|%>
         <%= form.label :reservation_date%>
         <%= form.datetime_field :reservation_date%>
+        <%= form.submit "Reserve Date", class:"bg-green-500 text-green-50 p-2 rounded-lg"%>
     <% end %>
     
 </div>
