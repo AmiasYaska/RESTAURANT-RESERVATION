@@ -7,6 +7,10 @@ module Locations
         end
 
         def create
+            @reservation = @location.reservations.new(reservation_date: params[:reservation_date])
+
+            
+
         end
 
         private
