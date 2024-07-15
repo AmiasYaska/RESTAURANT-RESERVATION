@@ -8,6 +8,7 @@ module Locations
 
         def create
             @reservation = @location.reservations.new(reservation_date: params[:reservation_date])
+            @reservation.customer = current_customer
 
             if @location.within_operating_hours(@reservation.reservation_date)
                 before_date = @reservation.reservation_date - 15.minutes
