@@ -10,10 +10,11 @@ module Locations
             @reservation = @location.reservations.new(reservation_date: params[:reservation_date])
 
             if @location.operating_hours(@reservation.reservation_date)
-                render :new, alert: "Successful"
+                puts "Outside of hours"
 
             else
-                render :new, alert: "The time you chose is outside the operting hours"
+
+                render :new, alert: "The time you chose is outside the operating hours"
             end
 
         end
