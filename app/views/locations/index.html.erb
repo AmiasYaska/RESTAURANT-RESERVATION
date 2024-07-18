@@ -6,15 +6,15 @@
   <% content_for :title, "Locations" %>
 
   <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Locations</h1>
-    <%= link_to "New location", new_location_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+    <h1 class="font-bold text-4xl">Restaurants</h1>
+    <%= link_to "New Restaurant", new_location_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
   <div id="locations" class="min-w-full">
     <% @locations.each do |location| %>
       <%= render location %>
       <p>
-        <%= link_to "Show this location", location, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+        <%= link_to "Show this restaurant", location, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
       </p>
     <% end %>
   </div>
