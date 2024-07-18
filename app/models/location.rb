@@ -1,5 +1,5 @@
 class Location < ApplicationRecord
-    has_many :reservations
+    has_many :reservations, dependent: :destroy
 
     def within_operating_hours(reservation_date)
         reservation_time = Time.parse(reservation_date.to_s)
